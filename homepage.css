@@ -1,0 +1,89 @@
+*{
+ font-family: 'Fredericka the Great', cursive;
+ font-size: 44px;
+ color: #333;
+}
+
+.input-group-rounded .input-group-field {
+    /* border-radius: 5000px 0 0 5000px; */
+    border-radius: auto;
+    padding-right: 40%;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+    text-indent: 3%;
+}
+  
+  
+  .input-group-rounded .input-group-button .button {
+    /* border-radius: 0 5000px 5000px 0; */
+    border-radius: auto;
+    font-size: 1rem;
+    position: absolute;
+    float: right;
+  }
+
+
+  .hero-full-screen {
+    height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: url("https://st.depositphotos.com/1013886/5068/i/950/depositphotos_50685387-stock-photo-healthy-food-background.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  
+  .hero-full-screen .middle-content-section {
+    text-align: center;
+    color: #fefefe;
+  }
+  
+  .hero-full-screen .top-content-section {
+    width: 100%;
+  }
+  
+  .hero-full-screen .bottom-content-section {
+    padding: 1rem;
+  }
+  
+  .hero-full-screen .bottom-content-section svg {
+    height: 3.75rem;
+    width: 3.75rem;
+    fill: #fefefe;
+  }
+  
+  .hero-full-screen .top-bar {
+    background: transparent;
+  }
+  
+  .hero-full-screen .top-bar .menu {
+    background: transparent;
+  }
+  
+  .hero-full-screen .top-bar .menu-text {
+    color: #fefefe;
+  }
+  
+  .hero-full-screen .top-bar .menu li {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .hero-full-screen .top-bar .menu a {
+    color: #fefefe;
+    font-weight: bold;
+  }
+  
+  

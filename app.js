@@ -1,5 +1,15 @@
-$("#button-secondary").on("click", function(){
+
+
+$("#button-secondary").on("click", function(event){
     console.log("clicked")
+    
+    $(".middle-content-section").hide()
+    //prevents page from reloading on search
+    event.preventDefault();
+
+    // empties search results
+    clear();
+    
     var searchTerm = $(".input-group-field").val()//get id for search button 
     // key 1 main
     var queryURL = "https://api.edamam.com/search?q="+ searchTerm +" &app_id=65ef0c30&app_key=33cd1b3b70a3582a44c9c59516afc54c&from=0&to=9";
@@ -30,27 +40,33 @@ $("#button-secondary").on("click", function(){
         for(var i = 0; i < results.length; i++){
 
             //create div
-            var recipeDiv = $("<div>");
+            var recipeAnchor = $("<a>");
             console.log(i);
-
-            // create tag to store recipe name (label)
-            var h = $("<h3>").text(results[i].recipe.label)//or just results[i].label?
             
-            //create img and store img  tag, or an <a> with href link and img src?
+            // create tag to store recipe name (label)
+            var h = $("<h3>").text(results[i].recipe.label)
+            
+            //create img variable and store img  tag
             var recipeImage = $("<img>");
-
             // sets the src attribute of the image and href and alt for label
+            recipeAnchor.attr("class", "cell small-4")
+            // recipeAnchor.attr("href", "nutPageTest.html")//change to final nutrition page name
             recipeImage.attr("src", results[i].recipe.image)
-            recipeImage.attr("href", results[i].recipe.url)
+            recipeImage.attr("alt", results[i].recipe.label)
+        
 
             //Append the h3 and image tags to recipeDiv
-            recipeDiv.append(h);
-            recipeDiv.append(recipeImage);
+            recipeAnchor.append(h);
+            recipeAnchor.append(recipeImage);
 
             // get jquery selector to append recipeDiv
-            $(".display-results").append(recipeDiv);
+            $(".display-results").append(recipeAnchor);
         }
         // <a href='mysite'><img src='whatever'/></a>
         
     })
 })
+
+function clear() {
+    $(".display-results").empty();// get final selector name
+  }

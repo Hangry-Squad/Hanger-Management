@@ -41,11 +41,16 @@
     background-size: cover;
   }
   
-  .hero-full-screen .middle-content-section {
+  /* .hero-full-screen .middle-content-section {
     text-align: center;
     color: #fefefe;
   }
-  
+   */
+  .centermystuff{
+    text-align: center;
+    color: #fefefe;
+  }
+
   .hero-full-screen .top-content-section {
     width: 100%;
   }

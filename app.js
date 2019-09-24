@@ -49,7 +49,7 @@ $("#button-secondary").on("click", function(event){
             //create img variable and store img  tag
             var recipeImage = $("<img>");
             // sets the src attribute of the image and href and alt for label
-            recipeAnchor.attr("class", "cell small-4")
+            recipeAnchor.attr("class", "results")
             // recipeAnchor.attr("href", "nutPageTest.html")//change to final nutrition page name
             recipeImage.attr("src", results[i].recipe.image)
             recipeImage.attr("alt", results[i].recipe.label)

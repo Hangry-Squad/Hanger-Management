@@ -46,9 +46,21 @@
     color: #fefefe;
   }
    */
-  .centermystuff{
+  .center-heading-search{
     text-align: center;
     color: #fefefe;
+  }
+  /* recipe results container aligns as 3x3 or as needed for smaller screens -vic */
+  .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  /* font size for Recipe Name  -vic*/
+  h3 {
+    font-size: 20px;
   }
 
   .hero-full-screen .top-content-section {

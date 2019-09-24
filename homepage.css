@@ -1,26 +1,27 @@
 *{
  font-family: 'Fredericka the Great', cursive;
  font-size: 44px;
- color: #333;
+ color: whitesmoke;
 }
 
-.input-group-rounded .input-group-field {
+.input-group-recipe .input-group-ingredient {
     /* border-radius: 5000px 0 0 5000px; */
     border-radius: auto;
     padding-right: 40%;
     padding-bottom: 2rem;
     font-size: 1.8rem;
     text-indent: 3%;
+    justify-content: space-between;
 }
   
   
-  .input-group-rounded .input-group-button .button {
+  /* .input-group-rounded .input-group-button .button { */
     /* border-radius: 0 5000px 5000px 0; */
-    border-radius: auto;
-    font-size: 1rem;
-    position: absolute;
-    float: right;
-  }
+    /* border-radius: auto; */
+    /* font-size: 1rem; */
+    /* position: absolute; */
+    /* float: right; */
+  /* } */
 
 
   .hero-full-screen {
@@ -37,9 +38,22 @@
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background: url("https://st.depositphotos.com/1013886/5068/i/950/depositphotos_50685387-stock-photo-healthy-food-background.jpg") center center no-repeat;
+            background: url("https://cdn.hipwallpaper.com/i/91/39/8Fg9vW.jpg") center center no-repeat;
+    /* background: url("https://st.depositphotos.com/1013886/5068/i/950/depositphotos_50685387-stock-photo-healthy-food-background.jpg") center center no-repeat; */
     background-size: cover;
   }
+  /* created an ID for the title of the website and styled */
+  #title {
+    color: #D3D1B9;
+    font-size: 44px;
+  }
+  /* created an ID for the instructions to the website and styled */
+  #intro {
+    color: #D3D1B9;
+    font-size: 22px;
+
+  }
+
   
   /* .hero-full-screen .middle-content-section {
     text-align: center;
@@ -61,6 +75,17 @@
   /* font size for Recipe Name  -vic*/
   h3 {
     font-size: 20px;
+  }
+
+  /* recipe results image size -vic */
+  img {
+    width: 75px;
+    height: auto;
+  }
+  
+  /* anchor tag font size -vic */
+  a {
+    font-size: 16px;
   }
 
   .hero-full-screen .top-content-section {
@@ -101,6 +126,10 @@
   .hero-full-screen .top-bar .menu a {
     color: #fefefe;
     font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
   }
   
   

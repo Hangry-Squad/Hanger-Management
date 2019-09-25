@@ -28,7 +28,7 @@ Back end:
 # Issues we ran into
 
 * We started with three separate HTML pages and two .js pages, but we were eventually able to get everything on one HTML page and one .js page.
-* We ran into some problms with displaying the returned information exactly hoe we wanted it, but with the use of flexBox we were able to make it much more visually appealing.
+* We ran into some problems with displaying the returned information exactly hoe we wanted it, but with the use of flexBox we were able to make it much more visually appealing.
 * Github pushes/pulls/branches/master/EvErYtHiNg!!!  This was a great excercise in learning something the "hard way" and making mistakes so big that you will be sure to never make them again.
 
 # Future Developements:

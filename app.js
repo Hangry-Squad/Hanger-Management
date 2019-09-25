@@ -35,13 +35,13 @@ $("#button-secondary").on("click", function(event){
 
         // data from AJAX request stored in results
         var results = response.hits;
-        console.log(results[0].recipe.label)
+    
         // loops through each result 
         for(var i = 0; i < results.length; i++){
 
             //create div
             var recipeAnchor = $("<div>");
-            console.log(i);
+            
             
             // create tag to store recipe name (label)
             var h = $("<h3>").text(results[i].recipe.label)
@@ -50,11 +50,10 @@ $("#button-secondary").on("click", function(event){
             var recipeImage = $("<img>");
             // sets the src attribute of the image and href and alt for label
             recipeAnchor.attr("class", "results")
-            // recipeAnchor.attr("href", "nutPageTest.html")//change to final nutrition page name
             recipeImage.attr("src", results[i].recipe.image)
             recipeImage.attr("alt", results[i].recipe.label)
+            recipeImage.attr("data-yield", "Yields " + results[i].recipe.yield + " servings")
             recipeImage.attr("data-ingredient", results[i].recipe.ingredientLines)
-            recipeImage.attr("data-yield", "Yield " + results[i].recipe.yield)
             recipeImage.attr("href", results[i].recipe.url)
             
 
@@ -66,17 +65,17 @@ $("#button-secondary").on("click", function(event){
             // get jquery selector to append recipeDiv
             $(".display-results").append(recipeAnchor);
         }
-        // <a href='mysite'><img src='whatever'/></a>
+    
         
     })
 })
-
+//displays individual search results with serving size, name, and link
 $(document).on("click", ".results", function(){
     var imageHolder = $(this)
     console.log(imageHolder)
-    // console.log(imageHolder[0].children[1].attributes[2].value)
 
-    //make a div to hold everything were looping through
+
+    //make a div to hold everything were looping through -vic
     var selectedRecipeDiv = $("<div>");
     for (let i = 0; i < imageHolder[0].children[1].attributes.length; i++) {
 
@@ -85,7 +84,7 @@ $(document).on("click", ".results", function(){
             console.log("in if statment")
             var selectedRecipeImg = $("<img>")
             selectedRecipeImg.attr("src", imageHolder[0].children[1].attributes[0].value)
-            selectedRecipeImg.css("width", "5%")
+            selectedRecipeImg.css("width", "250px")
             selectedRecipeDiv.append(selectedRecipeImg)
 
         }else if( imageHolder[0].children[1].attributes[i].value === imageHolder[0].children[1].attributes[4].value){
@@ -111,7 +110,7 @@ $(document).on("click", ".results", function(){
 })
 
 
-    //clears search bar.
+    //clears search bar.-vic
 function clear() {
     $(".display-results").empty();// get final selector name
   }

@@ -66,7 +66,7 @@ $("#button-secondary").on("click", function(event){
             // get jquery selector to append recipeDiv
             $(".display-results").append(recipeAnchor);
         }
-        // <a href='mysite'><img src='whatever'/></a>
+      
         
     })
 })
@@ -85,7 +85,7 @@ $(document).on("click", ".results", function(){
             console.log("in if statment")
             var selectedRecipeImg = $("<img>")
             selectedRecipeImg.attr("src", imageHolder[0].children[1].attributes[0].value)
-            selectedRecipeImg.css("width", "65%")
+            selectedRecipeImg.css("width", "175px")
             selectedRecipeDiv.append(selectedRecipeImg)
 
         }else if( imageHolder[0].children[1].attributes[i].value === imageHolder[0].children[1].attributes[4].value){
@@ -114,6 +114,7 @@ $(document).on("click", ".results", function(){
     //clears search bar.
 function clear() {
     $(".display-results").empty();// get final selector name
+    $(".nutrient-content").empty()
   }
 
   //start of js code for nutrition page (third page)
@@ -129,6 +130,7 @@ $("#ingredient-submit").on("click", function () {
 
 
     event.preventDefault();
+    clear()
 
     //this foodItem will be calling the value of the p tag of ingrediants in the future
     var foodItem = $("#ingredient-input").val();
@@ -154,8 +156,8 @@ $("#ingredient-submit").on("click", function () {
 
         var calorieContent = response.calories;
         console.log("calories: " + calorieContent);
-        var calorieDisplay = $("<p>").text("calories: " + calorieContent);
-        $(".display-results").prepend(calorieDisplay);
+        var calorieDisplay = $("<p>").text("Calories: " + calorieContent);
+        $(".nutrient-content").prepend(calorieDisplay);
 
 
         for (let nutrient in listNutrients) {
@@ -167,9 +169,9 @@ $("#ingredient-submit").on("click", function () {
             console.log(nutrientQuan);
             console.log(nutrientUnit);
 
-            var p = $("<p>").text(`${nutrientLabel} ${nutrientQuan} ${nutrientUnit}`);
+            var p = $("<li>").text(`${nutrientLabel} ${nutrientQuan} ${nutrientUnit}`);
 
-            $(".display-results").append(p);
+            $(".nutrient-content").append(p);
 
         }
     })

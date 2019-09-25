@@ -2,79 +2,51 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>hAnger Management</title>
-  <link rel="stylesheet" type="text/css" href="homepage.css">
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-
-  <!-- Compressed CSS -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0=sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19su2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous"> -->
-
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous"> -->
-  <!-- Compressed JavaScript -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hAnger Management</title>
+    <!-- Linking Bootstrap and CSS File! -->
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
 <body>
 
-
-  <b class="hero-full-screen">
-
-    <b class="top-content-section">
-      <b class="top-bar">
-        <b class="top-bar-left">
-          <ul class="menu">
-            <!-- <li class="menu-text"><img src="https://st.depositphotos.com/1013886/5068/i/950/depositphotos_50685387-stock-photo-healthy-food-background.jpg" alt="logo"></li>
-          -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
             <b class="center-heading-search">
-              <h1 id="title">Hangry Management</h1>
-              <h1 id="intro">Hi! Welcome to Hangry Management, we're here for all of your recipe & nutrition inquiries!</h1>
-              <div class="input-group-recipe">
-                <input class="input-group-field" type="search">
-                <div class="input-group-button">
-                  <p id="instruction-recipe">What do you want to cook? Find a recipe, ingrediants, and nutritional value!</p>
-                  <button id="button-secondary">Find your recipe!</button>
-                  <!-- <input id="button-secondary" type="submit" class="button secondary" value="Search"> -->
+                <h1 id="title">Hangry Management</h1>
+                <h1 id="intro">We're here for all of your recipe & nutrition inquiries!</h1>
+                <!-- This is search bar to find recipe given a food item -->
+                <div class="search-engine-container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <p id="instruction-recipe">What do you want to cook? Find a recipe,
+                                ingrediants,
+                                and
+                                nutritional value!</p>
+                            <input class="input-group-field" type="search">
+                            <button id="button-secondary">Find your recipe!</button>
+
+                        </div>
+                        <!-- This is button to find nutritional value of a given recipe -->
+                        <div class="col-sm-6">
+                            <p id="instruction-ingredient">Already have a recipe? Type the
+                                ingrediants
+                                and nutritional value!</p>
+                            <input id="ingredient-input" type="search" size="20">
+                            <button id="ingredient-submit">Calorie Calculator!</button>
+                        </div>
+                        <div class="container display-results"></div>
+                        <!-- This is where search results will display from js dynamic loop from Recipe API -->
+                        <ul class="nutrient-content"></ul>
+                    </div>
                 </div>
-              </div>
-
-              <!-- <b class="middle-content-section"> -->
-                <br>
-
-
-                <!-- <div class="input-group-recipe">
-                  <input class="input-group-field" type="search">
-                  <div class="input-group-button">
-                    <button id="button-secondary">Find your recipe!</button> -->
-                    <!-- <input id="button-secondary" type="submit" class="button secondary" value="Search"> -->
-                  </div>
-                </div>
-
-                <b class="input-group-ingredient">
-                  <input id="ingredient-input" type="search">
-                  <b class="input-group-button">
-                      <p id="instruction-ingredient">What do you want to cook? Find a recipe, ingrediants, and nutritional value!</p>
-                    <button id="ingredient-submit">Calorie Calculator!</button>>
-                  </b>
-                </b>
-
-                
-              </b>
-              <!-- this is where search results will display from js dynamic loop -vic -->
-              <div class="container display-results"></div>
-
-              <!-- stop -->
-            </b>
-            <!-- end centering -->
-          </ul>
-        </b>
-      </b>
-    </b>
+        </div>
+    </div>
 
 
 
@@ -82,16 +54,14 @@
 
 
 
-  </b>
 
-  <div id="main-content-section" data-magellan-target="main-content-section">
-    <!-- your content goes here -->
-  </div>
 
-  <!---Vics app.js file links-->
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <script src="app.js"></script>
+
+
+    <!--js file links-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 
 
 </body>

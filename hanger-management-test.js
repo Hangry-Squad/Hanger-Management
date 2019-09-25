@@ -66,7 +66,7 @@ $("#button-secondary").on("click", function(event){
             // get jquery selector to append recipeDiv
             $(".display-results").append(recipeAnchor);
         }
-        // <a href='mysite'><img src='whatever'/></a>
+      
         
     })
 })
@@ -130,6 +130,7 @@ $("#ingredient-submit").on("click", function () {
 
 
     event.preventDefault();
+    clear()
 
     clear()
     //this foodItem will be calling the value of the p tag of ingrediants in the future
@@ -156,7 +157,7 @@ $("#ingredient-submit").on("click", function () {
 
         var calorieContent = response.calories;
         console.log("calories: " + calorieContent);
-        var calorieDisplay = $("<p>").text("calories: " + calorieContent);
+        var calorieDisplay = $("<p>").text("Calories: " + calorieContent);
         $(".nutrient-content").prepend(calorieDisplay);
 
 

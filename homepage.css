@@ -79,15 +79,19 @@
 
   /* recipe results image size -vic */
   img {
-    width: 75px;
+    width: 200px;
     height: auto;
   }
   
   /* anchor tag font size -vic */
   a {
-    font-size: 16px;
+    font-size: 20px;
   }
 
+  /* individual result */
+  .display-results {
+    padding-top: 100px;
+  }
   .hero-full-screen .top-content-section {
     width: 100%;
   }

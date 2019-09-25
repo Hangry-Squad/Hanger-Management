@@ -150,7 +150,8 @@ color: black;
        height: auto;
      }
 
-     .display-results {
+     .display-results, 
+     .nutrient-content {
        padding-top: 35px;
      }
      

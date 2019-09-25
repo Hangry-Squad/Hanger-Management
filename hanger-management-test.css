@@ -1,0 +1,198 @@
+body {
+    background: url("https://cdn.hipwallpaper.com/i/91/39/8Fg9vW.jpg") center center no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+    /* font-family: 'Fredericka the Great', cursive;  */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  */
+    /* font-size: 44px; */
+    /* color:black;  */
+    /* background: url("https://cdn.hipwallpaper.com/i/91/39/8Fg9vW.jpg") center center no-repeat; */
+    /* background-size: cover; */
+
+    
+   
+   .input-group-recipe  {
+       /* border-radius: 5000px 0 0 5000px; */
+       border-radius: auto;
+       /* padding-right: 40%;
+       padding-bottom: 2rem;
+       font-size: 1.8rem;
+       text-indent: 3%; */
+       justify-content: space-between;
+   }
+   .input-group-ingredient {
+    border-radius: auto;
+    /* padding-right: 40%;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+    text-indent: 3%; */
+    justify-content: space-between;
+
+   }
+   #ingredient-input {
+       size: 20px;
+   }
+   .jumbotron {
+       position: sticky;
+       top: 50px;
+       margin-right: 5%;
+       background-color: white;
+       margin-left:5%;
+       margin-top: 5%;
+       font-family: Georgia, 'Times New Roman', Times, serif;
+
+    
+   }
+     
+     /* #text [
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+
+     ] */
+     /* .input-group-rounded .input-group-button .button { */
+       /* border-radius: 0 5000px 5000px 0; */
+       /* border-radius: auto; */
+       /* font-size: 1rem; */
+       /* position: absolute; */
+       /* float: right; */
+     /* } */
+   
+   
+     /* .hero-full-screen {
+       height: 100vh;
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display: flex;
+       -webkit-flex-direction: column;
+           -ms-flex-direction: column;
+               flex-direction: column;
+       -webkit-align-items: center;
+           -ms-flex-align: center;
+               align-items: center;
+       -webkit-justify-content: space-between;
+           -ms-flex-pack: justify;
+               justify-content: space-between;
+               background: url("https://cdn.hipwallpaper.com/i/91/39/8Fg9vW.jpg") center center no-repeat;
+       /* background: url("https://st.depositphotos.com/1013886/5068/i/950/depositphotos_50685387-stock-photo-healthy-food-background.jpg") center center no-repeat; */
+     
+
+     .row {
+         justify-content: space-between
+     }
+     /* created an ID for the title of the website and styled */
+     #title {
+       color: black;
+       font-size: 50px;
+       text-align: center;
+       font-weight: bold;
+
+     }
+     /* created an ID for the instructions to the website and styled */
+     #intro {
+       color: black;
+       font-size: 30px;
+       width: 40%;
+       align-content: center;
+       margin-left: 30%;
+       text-align: center;
+   
+     }
+     #button-secondary {
+         color: black;
+     }
+     #ingredient-submit {
+         color: black;
+     }
+     .search-engine-container {
+         margin-left: 10%;
+     }
+     #instruction-ingredient {
+       width: 80%;
+     }
+     /* #instruction-recipe {
+color: black;
+/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif */
+
+    
+     /* #instruction-ingredient {
+         color: black;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif */
+
+     
+
+   
+     
+     /* .hero-full-screen .middle-content-section {
+       text-align: center;
+       color: #fefefe;
+     }
+      */
+     /* .center-heading-search{
+       text-align: center;
+       color: #fefefe;
+     } */
+     /* recipe results container aligns as 3x3 or as needed for smaller screens -vic */
+     .container{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-evenly;
+       align-content: space-evenly;
+       flex-wrap: wrap;
+     }
+     /* font size for Recipe Name  -vic*/
+     h3 {
+       font-size: 20px;
+     }
+   
+     /* recipe image size */
+     img {
+       width: 65%;
+       height: auto;
+     }
+     
+   
+     /* .hero-full-screen .top-content-section {
+       width: 100%;
+     }
+     
+     .hero-full-screen .bottom-content-section {
+       padding: 1rem;
+     }
+     
+     .hero-full-screen .bottom-content-section svg {
+       height: 3.75rem;
+       width: 3.75rem;
+       fill: #fefefe;
+     }
+     
+     .hero-full-screen .top-bar {
+       background: transparent;
+     }
+     
+     .hero-full-screen .top-bar .menu {
+       background: transparent;
+     }
+     
+     .hero-full-screen .top-bar .menu-text {
+       color: #fefefe;
+     }
+     
+     .hero-full-screen .top-bar .menu li {
+       display: -webkit-flex;
+       display: -ms-flexbox;
+       display: flex;
+       -webkit-align-items: center;
+           -ms-flex-align: center;
+               align-items: center;
+     }
+     
+     .hero-full-screen .top-bar .menu a {
+       color: #fefefe;
+       /* font-weight: bold; */
+     /* } */ 
+   
+     p {
+       font-size: 16px;
+     }
+     
+     

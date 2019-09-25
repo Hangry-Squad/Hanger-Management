@@ -1,9 +1,9 @@
 
 
 $("#button-secondary").on("click", function(event){
-    console.log("clicked")
     
     $(".middle-content-section").hide()
+
     //prevents page from reloading on search
     event.preventDefault();
 
@@ -21,27 +21,23 @@ $("#button-secondary").on("click", function(event){
     // var queryURL = "https://api.edamam.com/search?q="+ searchTerm +" &app_id=6c77a1da&app_key=7b68d8e789a3929cf8b32b16c5a5904b&from=0&to=9";
 
     // key 4 test purpose
-    // var queryURL = "https://api.edamam.com/search?q="+ searchTerm +" &app_id=6055eb9f&app_key=3fb7be0868627299cb39b155b36e94a6&from=0&to=9";
-    console.log(searchTerm)
-    
+    // var queryURL = "https://api.edamam.com/search?q="+ searchTerm +" &app_id=6055eb9f&app_key=3fb7be0868627299cb39b155b36e94a6&from=0&to=9";    
     $.ajax({
         url: queryURL,
         method: "GET"
     })
 
     .then(function(response){
-        $(".input-group-field").val('')//class-name of the search box
-        console.log(response)
+        $(".input-group-field").val('')
 
         // data from AJAX request stored in results
         var results = response.hits;
-        console.log(results[0].recipe.label)
-        // loops through each result 
+
+        // loops through each result from AJAX
         for(var i = 0; i < results.length; i++){
 
             //create div
             var recipeAnchor = $("<div>");
-            console.log(i);
             
             // create tag to store recipe name (label)
             var h = $("<h3>").text(results[i].recipe.label)
@@ -50,20 +46,18 @@ $("#button-secondary").on("click", function(event){
             var recipeImage = $("<img>");
             // sets the src attribute of the image and href and alt for label
             recipeAnchor.attr("class", "results")
-            // recipeAnchor.attr("href", "nutPageTest.html")//change to final nutrition page name
             recipeImage.attr("src", results[i].recipe.image)
             recipeImage.attr("alt", results[i].recipe.label)
             recipeImage.attr("data-ingredient", results[i].recipe.ingredientLines)
             recipeImage.attr("data-nutrients", "Yields " + results[i].recipe.yield + " servings!")
-            recipeImage.attr("href", "Click here for instructions to the recipe: " + results[i].recipe.url)
-            // <a href= "results[i].recipe.url"><button>Visit Page Now</button></a>
+            recipeImage.attr("href", results[i].recipe.url)
 
             //Append the h3 and image tags to recipeDiv
             recipeAnchor.append(h);
             recipeAnchor.append(recipeImage);
           
 
-            // get jquery selector to append recipeDiv
+            // Dynamic Loop will get dumped here.
             $(".display-results").append(recipeAnchor);
         }
       
@@ -73,28 +67,27 @@ $("#button-secondary").on("click", function(event){
 
 $(document).on("click", ".results", function(){
     var imageHolder = $(this)
-    console.log(imageHolder)
-    // console.log(imageHolder[0].children[1].attributes[2].value)
 
-    //make a div to hold everything were looping through
+    //Loop to get attributes from images to display selected Attributes on click
     var selectedRecipeDiv = $("<div>");
     for (let i = 0; i < imageHolder[0].children[1].attributes.length; i++) {
 
-        console.log(imageHolder[0].children[1].attributes[i].value)
+    
         if( imageHolder[0].children[1].attributes[i].value===imageHolder[0].children[1].attributes[0].value){
-            console.log("in if statment")
+           
             var selectedRecipeImg = $("<img>")
             selectedRecipeImg.attr("src", imageHolder[0].children[1].attributes[0].value)
             selectedRecipeImg.css("width", "175px")
             selectedRecipeDiv.append(selectedRecipeImg)
 
         }else if( imageHolder[0].children[1].attributes[i].value === imageHolder[0].children[1].attributes[4].value){
-        console.log("inside a Tag")
+        
             var selectedRecipeATag = $("<a>");
             selectedRecipeATag.attr("href", imageHolder[0].children[1].attributes[4].value)
             selectedRecipeATag.text(imageHolder[0].children[1].attributes[4].value)
             selectedRecipeDiv.append(selectedRecipeATag);
         }else {
+
             var selectedRecipePTag = $("<p>");
             selectedRecipePTag.text(imageHolder[0].children[1].attributes[i].value)
             selectedRecipeDiv.append(selectedRecipePTag)
@@ -106,56 +99,47 @@ $(document).on("click", ".results", function(){
     $(".display-results").append(selectedRecipeDiv);
     $(".display-results").show()
 
-
-    // $(".display-results").hide()
 })
 
 
-    //clears search bar.
+    //Function to clear out previous display after new search.
 function clear() {
-    $(".display-results").empty();// get final selector name
+    $(".display-results").empty();
     $(".nutrient-content").empty()
   }
 
-  //start of js code for nutrition page (third page)
+  //Start of code for Nutrition API
 
 
 //This should be calling whatever button (picture they chose to see the recipe of (2nd page)) they clicked 
 //need to do on click this --> hide middle section --> need to figure out how to console log the recipe object
 $("#ingredient-submit").on("click", function () {
-    console.log("clicked")
-
-    // $(".input-group-recipe").hide();
-    // $(".input-group-ingredient").hide();
-
-
+    
     event.preventDefault();
+
     clear()
 
-    //this foodItem will be calling the value of the p tag of ingrediants in the future
+    //this foodItem will be calling the value of the p tag of ingredients in the future
     var foodItem = $("#ingredient-input").val();
-    //this code is replacing the spaces in the ingrediants list, so that 
+    //this code is replacing the spaces in the ingrediants list 
     foodItem.replace(' ', '%20')
-    //api call
+    //API call
     var queryURL = "https://api.edamam.com/api/nutrition-data?app_id=54229f7b&app_key=4047020179cb06d777610301b960cc69&ingr=" + foodItem;
-    var pageIngrediants = $("#ingrediants").val();
-    console.log(pageIngrediants);
+
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         function inputSearch() {
-            console.log(foodItem);
         }
         inputSearch();
 
-        console.log(response);
         var listNutrients = response.totalNutrients;
-        console.log(listNutrients);
+        
 
         var calorieContent = response.calories;
-        console.log("Calories: " + calorieContent);
+        
         var calorieDisplay = $("<p>").text("Calories: " + calorieContent);
         $(".nutrient-content").prepend(calorieDisplay);
 
@@ -165,9 +149,7 @@ $("#ingredient-submit").on("click", function () {
             var nutrientLabel = listNutrients[nutrient].label;
             var nutrientQuan = listNutrients[nutrient].quantity;
             var nutrientUnit = listNutrients[nutrient].unit;
-            console.log(nutrientLabel);
-            console.log(nutrientQuan);
-            console.log(nutrientUnit);
+            
 
             var p = $("<li>").text(`${nutrientLabel} ${nutrientQuan} ${nutrientUnit}`);
 

@@ -85,7 +85,7 @@ $(document).on("click", ".results", function(){
             console.log("in if statment")
             var selectedRecipeImg = $("<img>")
             selectedRecipeImg.attr("src", imageHolder[0].children[1].attributes[0].value)
-            selectedRecipeImg.css("width", "175px")
+            selectedRecipeImg.css("width", "165px")
             selectedRecipeDiv.append(selectedRecipeImg)
 
         }else if( imageHolder[0].children[1].attributes[i].value === imageHolder[0].children[1].attributes[4].value){
@@ -132,6 +132,7 @@ $("#ingredient-submit").on("click", function () {
     event.preventDefault();
     clear()
 
+    clear()
     //this foodItem will be calling the value of the p tag of ingrediants in the future
     var foodItem = $("#ingredient-input").val();
     //this code is replacing the spaces in the ingrediants list, so that 

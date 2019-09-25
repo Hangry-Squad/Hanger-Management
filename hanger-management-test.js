@@ -66,7 +66,7 @@ $("#button-secondary").on("click", function(event){
             // get jquery selector to append recipeDiv
             $(".display-results").append(recipeAnchor);
         }
-        // <a href='mysite'><img src='whatever'/></a>
+      
         
     })
 })
@@ -85,7 +85,7 @@ $(document).on("click", ".results", function(){
             console.log("in if statment")
             var selectedRecipeImg = $("<img>")
             selectedRecipeImg.attr("src", imageHolder[0].children[1].attributes[0].value)
-            selectedRecipeImg.css("width", "65%")
+            selectedRecipeImg.css("width", "175px")
             selectedRecipeDiv.append(selectedRecipeImg)
 
         }else if( imageHolder[0].children[1].attributes[i].value === imageHolder[0].children[1].attributes[4].value){

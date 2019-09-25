@@ -149,6 +149,10 @@ color: black;
        width: 65%;
        height: auto;
      }
+
+     .display-results {
+       padding-top: 35px;
+     }
      
    
      /* .hero-full-screen .top-content-section {
